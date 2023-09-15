@@ -1,0 +1,265 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,500;1,600&family=PT+Sans:ital@0;1&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'PT Sans', sans-serif;
+}
+section{
+    margin-top: 50px;
+}
+body{
+    position: relative;
+    background-color: rgb(39, 36, 36);
+    color: #fff;
+}
+
+/*le haut de la page*/
+.top{
+    margin: 5px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+/*debut css des deux trait de la gauche*/
+.toggle_menu{
+    display: flex;
+    height: 40px;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    cursor: pointer;
+}
+.toggle_menu::before{
+    position: absolute;
+    content: "";
+    left: 12px;
+    height: 4px;
+    width: 20px;
+    background-color: white;
+    border-radius: 6px;
+    transition: 0.5s;
+}
+.toggle_menu:hover::before{
+    width: 70%;
+}
+.toggle_menu::after{
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    content: "";
+    height: 4px;
+    width: 20px;
+    background-color: white;
+    border-radius: 6px;
+    transition: 0.5s;
+}
+.toggle_menu:hover::after{
+    width: 70%;
+}
+/*fin css*/
+
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.title{
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+.service{
+    width: 40%;
+    text-align: center;
+    margin-bottom: 5px;
+}
+.header p{
+    font-size: 25px;
+}
+
+/*debut css icon*/
+.social-icons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black; /* Couleur de fond de la page */
+    height: 30px;
+}
+.social-icons2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.icon {
+    margin: 5px 0px;
+    width: 240px;
+    text-align: center;
+}
+.icon a {
+    text-decoration: none;
+    color: rgb(121, 113, 113);
+}
+.icon i {
+    width: 50px; /* Ajustez la taille des icônes selon vos besoins */
+    height: auto;
+}
+/*fin css icon*/
+/*fin css du haut*/
+
+/*debut css images*/
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+.photo-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Trois photos par ligne */
+    gap: 20px;
+    justify-items: center;
+}
+.photo {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    transition: transform 0.3s;
+    border: 1px solid transparent;
+    background-color: black;
+    margin-bottom: 20px;
+}
+.photo img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+.photo img{
+    width: 100%;
+    animation: animate 3s linear;
+    transition: 1s;
+}
+.photo:hover {
+    transform: scale(1.05);
+}
+/*animation image */
+@keyframes animate{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+.author {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-top: 5px;
+    padding-left:15px;
+}
+.detail{
+    padding-left:15px;
+    font-size: 18px;
+}
+.photo a {
+    text-decoration: none;
+    color: white;
+    display: block;
+    margin-top: 5px;
+    margin-left:250px;
+    border: 1px solid rgb(70, 65, 65);
+    border-radius: 20px;
+    padding: 5px 10px;
+    background-color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    color: black;
+    width: 30%;
+    margin-bottom: 8px;
+    text-align: center;
+}
+.photo a:hover{
+    background-color: rgba(0, 0, 0, 0.1);
+    color: white;
+}
+
+
+/*fin css images*/
+
+/*debut css footer*/
+footer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+hr{
+    width: 95%;
+    background-color:white;
+    border: 0;
+    height: 1px;
+}
+.footer_text{
+    text-align: center;
+    font-size: 15px;
+    padding: 8px 0;
+}
+.footer_text span{
+    font-weight: bolder;
+}
+/*fin css footer*/
+
+/*css responsive*/
+@media (max-width: 768px) {
+    .photo-container {
+        grid-template-columns: repeat(1, 1fr); /* Deux photos par ligne sur des écrans plus petits */
+    }
+    .title{
+        font-size: 1.8rem;
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+    .service{
+        width: 90%;
+        text-align: center;
+        margin-bottom: 5px;
+    }
+    .header p{
+        font-size: 18px;
+    }
+    .photo a {
+        margin-left:320px;
+    }
+}
+@media (max-width: 480px) {
+    .photo-container {
+        grid-template-columns: repeat(1, 1fr); /* Une photo par ligne sur des écrans très petits */
+    }
+    .title{
+        font-size: 1.5rem;
+        font-weight: bold;
+        margin-bottom: 5px;
+        text-align: center;
+    }
+    .service{
+        width: 100%;
+        text-align: center;
+        margin-bottom: 5px;
+    }
+    .header p{
+        font-size: 14px;
+    }
+    .photo a {
+        margin-left:200px;
+    }
+    hr{
+        width: 100%;
+    }
+    .footer_text{
+        text-align: center;
+        font-size: 12px;
+        padding: 6px 0;
+    }
+}
